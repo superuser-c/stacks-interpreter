@@ -1,43 +1,43 @@
 # stacks-interpreter
-intepreter of my new ezoteric? language in Python
+intepreter of my new ezoteric? language in Python<br/>
 there is a list of stacks and one variable and code manipulates with them to create output
 
 ## commands:
-c - creates a new stack/clears stack at stack pointer
-n - increments stack pointer
-b - decrements stack pointer
-p
-  nextchar;
-  if c == 'c':
-    nextchar; push c to actual stack
-  elif c == 'i':
-    nextchar; push (c - '0') to actual stack
-  elif c == 'l':
-    push (look at actual stack) to actual stack -> duplicate item at top of actual stack
-  elif c == '$':
-    push value of tmp var to actual stack
-  elif c == '<':
-    push input to actual stack
-  nextchar;
-s - shoots from actual stack
-w
-  nextchar;
-  if c == 'l':
-    write look at actual stack
-  elif c == 's':
-    write shoot from actual stack
-  elif c == '#':
-    write and clear full stack
-$
-  nextchar;
-  if c == 'l':
-    tmp = look at actual stack
-  elif c == 's':
-    tmp = shoot from actual stack
-i - increment top of actual stack
-d - decrement top of actual stack
-[] - while look at actual stack != 0
-{} - while actual stack isn't empty
-t - terminates program
+c - creates a new stack/clears stack at stack pointer<br/>
+n - increments stack pointer<br/>
+b - decrements stack pointer<br/>
+p<br/>
+  nextchar;<br/>
+  if c == 'c':<br/>
+    nextchar; push c to actual stack<br/>
+  elif c == 'i':<br/>
+    nextchar; push (c - '0') to actual stack<br/>
+  elif c == 'l':<br/>
+    push (look at actual stack) to actual stack -> duplicate item at top of actual stack<br/>
+  elif c == '$':<br/>
+    push value of tmp var to actual stack<br/>
+  elif c == '<':<br/>
+    push input to actual stack<br/>
+  nextchar;<br/>
+s - shoots from actual stack<br/>
+w<br/>
+  nextchar;<br/>
+  if c == 'l':<br/>
+    write look at actual stack<br/>
+  elif c == 's':<br/>
+    write shoot from actual stack<br/>
+  elif c == '#':<br/>
+    write and clear full stack<br/>
+$<br/>
+  nextchar;<br/>
+  if c == 'l':<br/>
+    tmp = look at actual stack<br/>
+  elif c == 's':<br/>
+    tmp = shoot from actual stack<br/>
+i - increment top of actual stack<br/>
+d - decrement top of actual stack<br/>
+[] - while look at actual stack != 0<br/>
+{} - while actual stack isn't empty<br/>
+t - terminates program<br/>
 ## syntax:
 just write commands, use ? as one-line comment
