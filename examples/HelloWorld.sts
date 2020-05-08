@@ -1,0 +1,12 @@
+? version 1.0; @version is from 1.1
+? prints "Hello, World!"
+c
+? chars must be pushed in reverse order to stack
+pc!                    ? start with !
+pcd pcl pcr pco pcW    ? now reversed "World" (dlroW)
+pc                     ? then space
+pc,                    ? comma (after "Hello")
+pco pcl pl pce pcH     ? now reversed "Hello" (olleH)
+                       ? double 'l' can be created with pushing 'l' and then duplicating the top item
+w#                     ? print stack ({ws} can be used instead w#)
+t                      ? terminate program
