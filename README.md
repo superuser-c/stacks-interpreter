@@ -64,8 +64,8 @@ p
 ^ - inserts a new place for stack after current stack and increments stack pointer
 x - deletes current stack and decrements stack pointer
 !ROUTINES!
-r<name<code> - creates new routine
-rc<name> - runs a routine
+r&lt;name&lt;code&gt; - creates new routine
+rc&lt;name&gt; - runs a routine
 </pre>
 ## syntax:
 just write commands, use ? as one-line comment
