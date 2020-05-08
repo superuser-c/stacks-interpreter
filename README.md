@@ -43,9 +43,9 @@ t - terminates program
 @version * - at the beggining, on its own line; causes error if interpreter version is lower than specified at the place of *
 ! - nextchar; break c - '0' loops
 ~ - adds not into while (~[] - while look == 0; ~{} - while stack is empty)
----------------------------------------------------------FUTURE---------------------------------
 -------------------------------from version 1.2------------------------
 e - executes stack
+---------------------------------------------------------FUTURE-------------------------------------------------------------
 -------------------------------from version 2.0------------------------
 fname<params|code> - creates new function (params are separated with ;)
 fcname<params| - calls a function
