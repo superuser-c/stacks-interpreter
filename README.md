@@ -39,6 +39,10 @@ d - decrement top of actual stack
 [] - while look at actual stack != 0
 {} - while actual stack isn't empty
 t - terminates program
+-------------------------------from version 1.1-------------------------
+@version * - at the beggining, on its own line; causes error if interpreter version is lower than specified at the place of *
+! - nextchar; break c - '0' loops
+~ - adds not into while (~[] - while look == 0; ~{} - while stack is empty)
 </pre>
 ## syntax:
 just write commands, use ? as one-line comment
