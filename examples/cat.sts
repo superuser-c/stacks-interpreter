@@ -1,0 +1,12 @@
+c      ? create stack
+p$     ? add tmp value to stack; (litte trick to make program shorter, because tmp varhas initial value 0)
+{      ? while stack not empty
+  s    ? clear stack
+  p<   ? add char to stack
+  wl   ? print input and leave it in stack
+}      ? termination isn't needed because there is infinite cycle
+
+? shorter:
+
+@version 1.1
+c~{p<ws}
