@@ -47,8 +47,6 @@ t - terminates program
 e - executes stack
 ---------------------------------------------------------FUTURE-------------------------------------------------------------
 -------------------------------from version 2.0------------------------
-fname<params|code> - creates new function (params are separated with ;)
-fcname<params| - calls a function
 p
   ...
   elif c == 's':
@@ -63,6 +61,11 @@ p
         sbuff = <chars to next '"'>
         for ch in sbuff.reverse():
           push ch to stack
+^ - inserts a new place for stack after current stack and increments stack pointer
+x - deletes current stack and decrements stack pointer
+!ROUTINES!
+r<name<code> - creates new routine
+rc<name> - runs a routine
 </pre>
 ## syntax:
 just write commands, use ? as one-line comment
