@@ -36,6 +36,10 @@ class SInterpreter:
       if pp >= len(i):
           sys.stderr.write("Program is not terminated!")
           sys.exit(-1)
+    testlen()
+    if i[pp] == '@':
+      sys.stderr.write("@specs aren't in 1.0! Use " + self.name + " 1.1 or higer!")
+      sys.exit(-1)
     while running:
       testlen()
       if i[pp] == 'c':
