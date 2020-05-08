@@ -10,3 +10,8 @@ pco pcl pl pce pcH     ? now reversed "Hello" (olleH)
                        ? double 'l' can be created with pushing 'l' and then duplicating the top item
 w#                     ? print stack ({ws} can be used instead w#)
 t                      ? terminate program
+
+
+? shortest version
+@version 2.0
+cps"!dlroW ,olleH"w#t
