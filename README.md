@@ -8,7 +8,7 @@ c - creates a new stack/clears stack at stack pointer
 n - increments stack pointer
 b - decrements stack pointer
 p
-nextchar;
+  nextchar;
   if c == 'c':
     nextchar; push c to actual stack  elif c == 'i':
     nextchar; push (c - '0') to actual stack
