@@ -47,7 +47,6 @@ t - terminates program
 ~ - adds not into while (~[] - while look == 0; ~{} - while stack is empty)
 -------------------------------from version 1.2------------------------
 e - executes stack
----------------------------------------------------------UNSTABLE-----------------------------------------------------------
 -------------------------------from version 2.0------------------------
 p
   ...
@@ -72,6 +71,7 @@ x - deletes current stack and decrements stack pointer
 !ROUTINES!
 r&lt;name&lt;code&gt; - creates new routine
 rc&lt;name&lt; - runs a routine
+---------------------------------------------------------UNSTABLE-----------------------------------------------------------
 ---------------------------------------------------------FUTURE-------------------------------------------------------------
 </pre>
 ## syntax:
