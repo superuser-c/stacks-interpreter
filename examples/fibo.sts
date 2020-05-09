@@ -1,0 +1,48 @@
+@version 2.0
+? fibonacci
+c p<                           ? save input
+n c pc0 [d b d n]              ? substract '0' from input
+s b wi
+^cpsr". number of line is "w#x ? this little trick will print a string
+d d                            ? substract 2 because of prepared 1 1 in line
+n pi1 pi1 n c pi1 b b          ? setup stacks for computing line
+? now its: ? 1 1
+?            1       (? is number of cycles needed)
+?          ^
+? stdout: "?.number of line is "
+[
+  d         ? simple counted loop
+  n $l pl   ? save and duplicate top of line
+  n
+  [d b i n] ? just add previous number to top of line
+  s p$      ? replace previous number with new number
+  b b       ? back to loop counter
+]
+? now its: 0 1 ?
+?            1
+?            2
+?            3
+?            5
+?            8
+?           ...
+?          ^
+n wi    ? write last number in line
+^cpsr"
+whole line: "w#x
+n c b
+{ $s n p$ b } x n   ? reverse stack
+? now its: 0 ...
+?             8
+?             5
+?             3
+?             2
+?             1
+?             1
+?             ^
+{ wi s pc  ws }
+t
+
+? without comments and non-needed whitespace
+@version 2.0
+cp<ncpc0[dbdn]sbwi^cpsr". number of line is "w#xddnpi1pi1ncpi1bb[dn$lpln[dbin]sp$bb]nwi^cpsr"
+whole line: "w#xncb{$snp$b}xn{wispcws}t
