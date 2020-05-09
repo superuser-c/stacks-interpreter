@@ -4,6 +4,8 @@ there is a list of stacks and one variable and code manipulates with them to cre
 
 ## commands:
 <pre>
+-----------------------------------------------------------STABLE-----------------------------------------------------------
+-------------------------------from version 1.0-------------------------
 c - creates a new stack/clears stack at stack pointer
 n - increments stack pointer
 b - decrements stack pointer
@@ -16,7 +18,7 @@ p
     push (look at actual stack) to actual stack -> duplicate item at top of actual stack
   elif c == '$':
     push value of tmp var to actual stack
-  elif c == '<':
+  elif c == '&lt;':
     push input to actual stack
   nextchar;
 s - shoots from actual stack
@@ -45,27 +47,32 @@ t - terminates program
 ~ - adds not into while (~[] - while look == 0; ~{} - while stack is empty)
 -------------------------------from version 1.2------------------------
 e - executes stack
----------------------------------------------------------FUTURE-------------------------------------------------------------
+---------------------------------------------------------UNSTABLE-----------------------------------------------------------
 -------------------------------from version 2.0------------------------
 p
   ...
   elif c == 's':
     nextchar;
     if c == '"':
-      sbuff = <chars to next '"'>
+      sbuff = &lt;chars to next '"'&gt;
       for ch in sbuff:
         push ch to stack
     elif c == 'r':
     nextchar;
       if c == '"':
-        sbuff = <chars to next '"'>
+        sbuff = &lt;chars to next '"'&gt;
         for ch in sbuff.reverse():
           push ch to stack
+w
+  ...
+  elif c == 'i':
+    write look as number
 ^ - inserts a new place for stack after current stack and increments stack pointer
 x - deletes current stack and decrements stack pointer
 !ROUTINES!
 r&lt;name&lt;code&gt; - creates new routine
-rc&lt;name&gt; - runs a routine
+rc&lt;name&lt; - runs a routine
+---------------------------------------------------------FUTURE-------------------------------------------------------------
 </pre>
 ## syntax:
 just write commands, use ? as one-line comment
