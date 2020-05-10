@@ -1,0 +1,42 @@
+@version 2.0
+? simple and bad console game
+? This is an example to show that it is possible to write games in stacks!
+? map of game:
+? junction -> right/left
+  ? right
+  ? house -> into/back
+    ? into
+    ? LOSE
+  ? back to start
+  ? left
+  ? back to start
+
+r<main<                                                                            ? "junction" part of "story"
+	^cpsr"You are at junction. Will you go to right or left? Write 'a' to go right.
+"w#x                                                                               ? yes, this trick is useful
+	c pca                                                                            ? 'a' -> one of two possible answers
+	n c p< p< s                                                                      ? the twp p< are there to get rid of \n input
+  b pl [ d n d b ] s n                                                             ? substract 'a' from input
+  ~[ ? right                                                                       ? if user wrote 'a' ('a' - 'a' = 0)
+		rc<house<                                                                      ? call "house" part of "story"
+		t                                                                              ? then terminate
+	]
+	b
+	rc<main< ? left                                                                  ? go back to start
+	t                                                                                ? then terminate
+>
+r<house<                                                                           ? "house" part of "story"
+	^cpsr"You see a house. Will you into it or go back? Write 'a' to go into it.
+"w#x                                                                               ? all same as in main
+	c pca
+	n c p< p< s b pl [ d n d b ] s n ~[ ? into
+		^cpsr"You had fallen trough the floor into a 100km deep pit.
+YOU LOSE!"w#x
+		t
+	]
+	b
+	rc<main< ? back
+	t
+>
+rc<main<                                                                           ? call start of game
+t                                                                                  ? terminate
