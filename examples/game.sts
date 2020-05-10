@@ -5,9 +5,12 @@
 ? junction -> right/left
   ? right
   ? house -> into/back
-    ? into
-    ? LOSE
-  ? back to start
+    ? into -> cellar/kitchen/bathroom
+      ? cellar WIN
+      ? kitchen LOSE
+      ? bathroom LOSE
+    ? back
+    ? back to start
   ? left
   ? back to start
 
@@ -16,9 +19,9 @@ r<main<                                                                         
 "w#x                                                                               ? yes, this trick is useful
 	c pca                                                                            ? 'a' -> one of two possible answers
 	n c p< p< s                                                                      ? the twp p< are there to get rid of \n input
-  	b pl [ d n d b ] s n                                                           ? substract 'a' from input
-  	~[ ? right                                                                     ? if user wrote 'a' ('a' - 'a' = 0)
-        	b
+  b [ d n d b ] s n                                                                ? substract 'a' from input
+  ~[ ? right                                                                       ? if user wrote 'a' ('a' - 'a' = 0)
+    b
 		rc<house<                                                                      ? call "house" part of "story"
 		t                                                                              ? then terminate
 	]
@@ -28,16 +31,41 @@ r<main<                                                                         
 >
 r<house<                                                                           ? "house" part of "story"
 	^cpsr"You see a house. Will you into it or go back? Write 'a' to go into it.
-"w#x                                                                               ? all same as in main
+"w#x
 	c pca
-	n c p< p< s b pl [ d n d b ] s n ~[ ? into
+	n c p< p< s b [ d n d b ] s n ~[ ? into
+		b
+		rc<inhouse<
+		t
+	]
+	b
+	rc<main< ? back
+	t
+>
+r<inhouse<                                                                            ? "in house" part of "story"
+	^cpsr"You are in house. Will you go to cellar, kitchen or bathroom?
+Write 'a' to go to cellar, 'b' to go to kitchen or anything else to go to bathroom.
+"w#x
+	c pcb pca                                                                           ? options in revere order
+	n c p< pl                                                                           ? copy this input
+                                                                                      ? input is here 2 times -> 2 options
+  p< s b [ d n d b ] s n ~[ ? cellar                                                  ? substract first option and shoot
+                                                                                      ? that 0 which remained
+		s b
+		^cpsr"You found a chest full of gold!
+YOU WON!"w#x
+		t
+	]
+	s b                                                                                 ? shoot substracted input
+	[ d n d b ] s n ~[ ? kitchen                                                        ? substract next option
 		b
 		^cpsr"You had fallen trough the floor into a 100km deep pit.
 YOU LOSE!"w#x
 		t
 	]
-	b
-	rc<main< ? back
+	b                                                                                   ? third option
+	^cpsr"You didn't found anything here, but ceiling had fallen onto you.
+YOU LOSE!"w#x
 	t
 >
 rc<main<                                                                           ? call start of game
