@@ -16,8 +16,9 @@ r<main<                                                                         
 "w#x                                                                               ? yes, this trick is useful
 	c pca                                                                            ? 'a' -> one of two possible answers
 	n c p< p< s                                                                      ? the twp p< are there to get rid of \n input
-  b pl [ d n d b ] s n                                                             ? substract 'a' from input
-  ~[ ? right                                                                       ? if user wrote 'a' ('a' - 'a' = 0)
+  	b pl [ d n d b ] s n                                                           ? substract 'a' from input
+  	~[ ? right                                                                     ? if user wrote 'a' ('a' - 'a' = 0)
+        	b
 		rc<house<                                                                      ? call "house" part of "story"
 		t                                                                              ? then terminate
 	]
@@ -30,6 +31,7 @@ r<house<                                                                        
 "w#x                                                                               ? all same as in main
 	c pca
 	n c p< p< s b pl [ d n d b ] s n ~[ ? into
+		b
 		^cpsr"You had fallen trough the floor into a 100km deep pit.
 YOU LOSE!"w#x
 		t
